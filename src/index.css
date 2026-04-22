@@ -1,0 +1,162 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --bg-primary: 30 25% 96%;
+    --bg-secondary: 30 20% 92%;
+    --bg-card: 0 0% 100%;
+    --bg-input: 30 15% 95%;
+    --text-primary: 230 25% 12%;
+    --text-secondary: 230 10% 42%;
+    --text-muted: 220 8% 58%;
+    --accent: 25 70% 52%;
+    --accent-soft: 28 80% 95%;
+    --positive: 152 60% 42%;
+    --positive-soft: 150 50% 94%;
+    --negative: 0 65% 55%;
+    --negative-soft: 0 60% 95%;
+    --border: 30 15% 90%;
+    --bottom-nav-bg: 0 0% 100%;
+
+    --background: var(--bg-primary);
+    --foreground: var(--text-primary);
+    --card: var(--bg-card);
+    --card-foreground: var(--text-primary);
+    --popover: var(--bg-card);
+    --popover-foreground: var(--text-primary);
+    --primary: var(--accent);
+    --primary-foreground: 0 0% 100%;
+    --secondary: var(--bg-secondary);
+    --secondary-foreground: var(--text-primary);
+    --muted: var(--bg-secondary);
+    --muted-foreground: var(--text-muted);
+    --accent-color: var(--accent);
+    --accent-foreground: 0 0% 100%;
+    --destructive: var(--negative);
+    --destructive-foreground: 0 0% 100%;
+    --input: var(--bg-input);
+    --ring: var(--accent);
+    --radius: 1rem;
+
+    --card-shadow: 0 2px 12px rgba(0,0,0,0.04), 0 1px 3px rgba(0,0,0,0.03);
+    --card-shadow-lg: 0 8px 30px rgba(0,0,0,0.06), 0 2px 8px rgba(0,0,0,0.04);
+
+    --gradient-card-start: #1A1A2E;
+    --gradient-card-mid: #2D1B4E;
+    --gradient-card-end: #0F3460;
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  [data-theme="dark"] {
+    --bg-primary: 225 20% 7%;
+    --bg-secondary: 225 18% 11%;
+    --bg-card: 225 18% 13%;
+    --bg-input: 225 16% 16%;
+    --text-primary: 30 20% 95%;
+    --text-secondary: 220 10% 62%;
+    --text-muted: 220 8% 42%;
+    --accent: 25 75% 58%;
+    --accent-soft: 25 40% 18%;
+    --positive: 152 55% 48%;
+    --positive-soft: 150 40% 12%;
+    --negative: 0 70% 58%;
+    --negative-soft: 0 50% 13%;
+    --border: 225 14% 18%;
+    --bottom-nav-bg: 225 18% 10%;
+
+    --card-shadow: 0 2px 12px rgba(0,0,0,0.2), 0 1px 3px rgba(0,0,0,0.15);
+    --card-shadow-lg: 0 8px 30px rgba(0,0,0,0.3), 0 2px 8px rgba(0,0,0,0.2);
+
+    --gradient-card-start: #0D0F14;
+    --gradient-card-mid: #1A1028;
+    --gradient-card-end: #0A1628;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Plus Jakarta Sans', 'DM Sans', sans-serif;
+    -webkit-tap-highlight-color: transparent;
+    overscroll-behavior: none;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+@layer components {
+  .font-display {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-weight: 700;
+  }
+
+  .font-body {
+    font-family: 'Plus Jakarta Sans', 'DM Sans', sans-serif;
+  }
+
+  .mobile-container {
+    max-width: 430px;
+    margin: 0 auto;
+    min-height: 100dvh;
+    position: relative;
+  }
+
+  .card-shadow {
+    box-shadow: var(--card-shadow);
+  }
+
+  .card-shadow-lg {
+    box-shadow: var(--card-shadow-lg);
+  }
+
+  .safe-bottom {
+    padding-bottom: 80px;
+  }
+
+  .gradient-accent {
+    background: linear-gradient(135deg, hsl(var(--accent)), hsl(25 80% 62%));
+  }
+
+  .gradient-card {
+    background: linear-gradient(145deg, var(--gradient-card-start), var(--gradient-card-mid), var(--gradient-card-end));
+  }
+
+  .tap-target {
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+  }
+
+  .glass {
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+}
